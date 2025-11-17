@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cozy Finds</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #faf7f3;
+      color: #2d2d2d;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: #f1e9e2;
+      border-bottom: 1px solid #e0d6ce;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #5a4636;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .product {
+      display: flex;
+      gap: 18px;
+      background: #fff;
+      padding: 18px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      transition: 0.2s ease;
+      align-items: flex-start;
+    }
+
+    .product img {
+      width: 200px;
+      height: auto;
+      border-radius: 12px;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+      color: #4d3b2f;
+      font-weight: 600;
+    }
+
+    .product a {
+      margin-top: auto;
+      display: inline-block;
+      background: #d4c1b4;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      align-self: flex-start;
+    }
+
+    .product a:hover {
+      background: #bea898;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 40px;
+      color: #7a6b5f;
+      font-size: 0.9rem;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cozy Home Picks</h1>
+  </header>
+
+  <div class="container">
+    <div class="product-grid" id="product-grid">
+
+      <!-- PRODUCTS WILL BE INSERTED HERE -->
+
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Cozy Home Picks — Amazon Affiliate Links Included
+  </footer>
+
+  <script>
+    // Array of products
+    const products = [
+      {
+        name: 'Artificial Eucalyptus Stems Potted Plant',
+        img: 'https://m.media-amazon.com/images/I/716jY89xEXL._AC_SL1500_.jpg',
+        desc: 'Pre-arranged faux greenery stems create designer-approved clusters. Place in entryways as welcoming fake greenery, style bookshelves with artificial greenery stems, or add height to coffee table displays.',
+        link: 'https://amzn.to/3X0JPFM'
+      }
+      // Add more products here following the same structure
+    ];
+
+    const grid = document.getElementById('product-grid');
+
+    products.forEach(product => {
+      const id = product.name.toLowerCase().replace(/[^a-z0-9]+/g,'-');
+      const div = document.createElement('div');
+      div.className = 'product';
+      div.id = id;
+      div.innerHTML = `
+        <img src="${product.img}" alt="${product.name}" />
+        <div class="info">
+          <h3>${product.name}</h3>
+          <p>${product.desc}</p>
+          <a href="${product.link}" target="_blank">View on Amazon</a>
+        </div>
+      `;
+      grid.appendChild(div);
+    });
+  </script>
+
+</body>
+</html>
