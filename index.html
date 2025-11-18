@@ -29,28 +29,29 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 40px 20px;
     }
 
     .product-grid {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
       gap: 25px;
-      align-items: center;
+      justify-items: center;
     }
 
     .product {
       display: flex;
       gap: 18px;
       background: #fff;
-      padding: 18px;
+      padding: 24px;
       border-radius: 14px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
       transition: 0.2s ease;
       align-items: flex-start;
-      width: 140%;
+      width: 100%;
+      max-width: 500px;
     }
 
     .product img {
@@ -68,7 +69,7 @@
 
     .product h3 {
       margin: 0 0 10px;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #4d3b2f;
       font-weight: 600;
     }
@@ -122,7 +123,6 @@
   </footer>
 
   <script>
-    // Array of products
     const products = [
       {
         name: 'Artificial Eucalyptus Stems Potted Plant',
@@ -148,7 +148,6 @@
         desc: "Beautifully designed, this Merry Christmas ornament makes a thoughtful gift for friends, family or co-workers",
         link: "https://amzn.to/48qUCOT"
       }
-      // Add more products here following the same structure
     ];
     
     const grid = document.getElementById('product-grid');
