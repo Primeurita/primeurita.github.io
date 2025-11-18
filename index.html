@@ -42,17 +42,14 @@
 
     .product {
       display: flex;
-      gap: 20px;
-      background: var(--card-bg);
-      padding: 30px;
-      border-radius: 18px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.08);
-      width: 120%;
-      max-width: 120%;
-      margin: 0 auto;
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
+      gap: 18px;
+      background: #fff;
+      padding: 18px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      transition: 0.2s ease;
+      align-items: flex-start;
+      width: 140%;
     }
 
     .product img {
@@ -146,7 +143,7 @@
       }
       // Add more products here following the same structure
     ];
-
+    
     const grid = document.getElementById('product-grid');
 
     products.forEach(product => {
@@ -165,6 +162,5 @@
       grid.appendChild(div);
     });
   </script>
-
 </body>
 </html>
